@@ -1,0 +1,67 @@
+deployment.user.cachedir String @ "$USER_HOME" + File.separator + "cache" @ User-level cache directory.
+deployment.system.cachedir @ String @ null @ System-level cache directory.
+deployment.user.logdir @ String @ "$USER_HOME" + File.separator + "log" @ User-level log directory.
+deployment.user.tmp @ String @ "$USER_HOME" + File.separator + "tmp"; @ Temporary user directory.
+deployment.user.security.policy @ String @ "file://$USER_HOME/security/java.policy" @ User-level security policy file. The protocol of URL is either file, HTTP, or HTTPS.
+deployment.user.security.trusted.cacerts @ String @ "$USER_HOME" + File.separator + "security" + File.separator + "trusted.cacerts"; @ User-level Root CA certificate store.
+deployment.user.security.trusted.jssecacerts @ String @ "$USER_HOME" + File.separator + "security" + File.separator + "trusted.jssecacerts" @ User-level JSSE CA certificate store.
+deployment.user.security.trusted.certs @ String @ "$USER_HOME" + File.separator + "security" + File.separator + "trusted.certs" @ User-level Trusted signer certificate store.
+deployment.user.security.trusted.jssecerts @ String @ "$USER_HOME" + File.separator + "security" + File.separator + "trusted.jssecerts"; @ User-level Trusted JSSE certificate store.
+deployment.user.security.trusted.clientauthcerts @ String @ "$USER_HOME" + File.separator + "security" + File.separator + "trusted.clientcerts" @ User-level Client Authentication certificate store.
+deployment.user.security.exception.sites @ String @ "$USER_HOME" + File.separator + "security" + File.separator + "exception.sites" @ Location of the exception site list. See Exception Site List for information.
+deployment.system.security.policy @ String @ null @ System-level security policy file. The protocol of URL is either file, HTTP, or HTTPS.
+deployment.system.security.cacerts @ String @ "$JAVA_HOME" + File.separator + "lib" + File.separator + "security" + File.separator + "cacerts" @ System-level Root CA certificate store.
+deployment.system.security.jssecacerts @ String @ "$JAVA_HOME" + File.separator + "lib" + File.separator + "security" + File.separator + "jssecacerts"; @ System-level JSSE CA certificate store.
+deployment.system.security.trusted.certs @ String @ "$SYSTEM_HOME" + File.separator + "security" + File.separator + "trusted.certs" @ System-level Signer certificate store.
+deployment.system.security.trusted.jssecerts @ String @ "$SYSTEM_HOME" + File.separator + "security" + File.separator + "trusted.jssecerts" @ System-level JSSE certificate store.
+deployment.system.security.trusted.clientauthcerts @ String @ "$SYSTEM_HOME" + File.separator + "security" + File.separator + "trusted.clientcerts" @ System-level Client Authentication certificate store.
+deployment.security.level @ String @ HIGH @ "MEDIUM": All applications that include the Permissions attribute in the manifest for the main JAR file are allowed to run with security prompts. If the Permissions attribute is not present in the main JAR file, then the application is blocked. "HIGH": Applications that are signed with a valid or expired certificate and include the Permissions attribute in the manifest for the main JAR file are allowed to run with security prompts. Applications are also allowed to run with security prompts when the revocation status of the certificate cannot be checked. All other applications are blocked. "VERY_HIGH": Applications that are signed with a valid certificate and include the Permissions attribute in the manifest for the main JAR file are allowed to run with security prompts. All other applications are blocked.
+deployment.webjava.enabled @ Boolean @ true @ Must be "true" to run applets or Java Web Start applications.
+deployment.insecure.jres @ String @ "PROMPT" @ "NEVER": Untrusted content will always run with the default JRE. "PROMPT": Prompt user before using insecure JRE versions; users will see the new warning dialogs
+deployment.expiration.check.enabled @ Boolean @ true @ Must be "true" to prompt users to update the JRE when an out-of-date JRE is found on their system. Set to "false" to suppress the prompt.
+deployment.security.askgrantdialog.show @ Boolean @ true @ Must be "true" if the user is allowed to grant permissions at all.
+deployment.security.askgrantdialog.notinca @ Boolean @ true @ Must be "true" if the user is allowed to grant permissions to certificates that are not issued by a CA in the Root/JSSE CA certificate store.
+deployment.security.jsse.hostmismatch.warning @ Boolean @ true @ Must be "true" for JSSE HTTPS certificate verification to show host-mismatch warning.
+deployment.security.trusted.policy @ String @ "" @ Policy file contains the ceiling policy of permissions granted to trusted applications and applets. By default this is all permissions, but by using this configuration setting, a user or enterprise can configure a lesser set of permissions.
+deployment.security.mixcode @ String @ ENABLE @ "ENABLE" enables the software to test for mixing trusted and untrusted code and, when potentially unsafe components are detected, raises a warning dialog. "HIDE_RUN" suppresses the warning dialog and, if potentially unsafe components are detected, behaves as if the user had clicked Run in the warning dialog - the applet or application continues running with some added protections. "HIDE_CANCEL" suppresses the warning dialog and behaves as if the user had clicked Cancel in the warning dialog - potentially unsafe components are blocked from running and the program may terminate. "DISABLE" (not recommended) disables the software from checking for mixing trusted and untrusted code, leaving the user to run potentially unsafe code with no warning and without the additional protections.
+deployment.security.sandbox.awtwarningwindow @ Boolean @ true @ "true" if the sandbox has awtShowWindowWithoutWarning.
+deployment.security.sandbox.jnlp.enhanced @ Boolean @ true @ Must be "true" for the user to see and accept JNLP API security dialogs.
+deployment.security.sandbox.selfsigned @ String @ PROMPT @ "PROMPT": Prompt user to allow the self-signed app to run in the sandbox. "NEVER": Block all self-signed content.
+deployment.security.sandbox.casigned @ String @ PROMPT @ "PROMPT": Prompt user to allow the app to run and provide information on the certificate used to sign the app. The user can choose to turn off future prompting for this application. "NEVER": Block any content from running unless it asks for and is granted all permissions.
+deployment.security.blacklist.check @ Boolean @ true @ Support for blacklisting signed JAR files that contain serious security vulnerabilities. deployment.security.blacklist.check is used to toggle this behaviour. For more information visit Blacklist Feature.
+deployment.security.revocation.check @ String @ ALL_CERTIFICATES @ "PUBLISHER_ONLY" checks only the certificate that the publisher used to sign the application. "ALL_CERTIFICATES" checks all certificates in the certificate chain. "NO_CHECK" (not recommended) suppresses the check for certificates that have been revoked.
+deployment.security.validation.ocsp @ Boolean @ true @ Specifies whether Online Certificate Status Protocol is enabled.
+deployment.security.validation.ocsp.url @ String @ null @ Specifies a url string pointing to an OCSP response server.
+deployment.security.validation.ocsp.signer @ String @ null @ Points to a OCSP response singer certificate subject name.
+deployment.security.validation.crl @ Boolean @ true @ Specifies whether to use certificate revocation list.
+deployment.security.validation.crl.url @ String @ null @ Specifies a URL in the Certificate Revocation List to perform a certificate validation.
+deployment.security.validation.clockskew @ int @ 900 @ Acceptable time difference, in seconds, between the system clock and the clock on the server used for revocation checks. If the property is not set, or the value is negative, the default of 900 seconds (15 minutes) is used.
+deployment.security.validation.timeout @ int @ 15 @ Maximum time, in seconds, that the system attempts to connect to the server for revocation checks before timing out. If the property is not set, or the value is negative, the default of 15 seconds is used. To never time out, set the property to 0.
+deployment.security.authenticator @ Boolean @ true @ Normally Plug-in and Web Start install an Authenticator to handle communication with Authenticating web pages or Authenticating proxies. This is the default behavior (true). This option can be used to turn the normal behavior off if, for example, an application communicates itself with an authenticating web page and needs to install it's own Authenticator. 
+deployment.proxy.type @ int @ 3 for PROX_TYPE_BROWSER @ This is for the type of proxy that should be use. The choices are: PROX_TYPE_UNKNOWN = -1; PROX_TYPE_NONE = 0; PROX_TYPE_MANUAL = 1; PROX_TYPE_AUTO = 2; and PROX_TYPE_BROWSER = 3;
+deployment.proxy.same @ Boolean @ false @ This parameter (true) says to use the same web server and port for https and ftp as is configured for http. (This is only valid if deployment.proxy.type = PROX_TYPE_MANUAL.)
+deployment.proxy.auto.config.url @ String @ (no default) @ URL for auto-Auto proxy configuration JavaScript.proxy configuration JavaScript.
+deployment.proxy.bypass.list @ String @ (no default) @ List of host names that should bypass the proxy. Each host name is delimited by a comma in the property; e.g., "192.168.1.100,localhost,example.com"
+deployment.proxy.bypass.local @ String @ (no default) @ All local hosts should be bypassed.
+deployment.proxy.http.host @ String @ (no default) @ HTTP proxy hostname.
+deployment.proxy.http.port @ String @ (no default) @ HTTP proxy port.
+deployment.proxy.https.host @ String @ (no default) @ HTTPS proxy hostname.
+deployment.proxy.https.port @ String @ (no default) @ HTTPS proxy port.
+deployment.proxy.ftp.host @ String @ (no default) @ FTP proxy hostname.
+deployment.proxy.ftp.port @ String @ (no default) @ FTP proxy port.
+deployment.proxy.socks.host @ String @ (no default) @ SOCKS v4 proxy hostname.
+deployment.proxy.socks.port @ String @ (no default) @ SOCKS v4 proxy port.
+deployment.proxy.override.hosts @ String @ "" @ Proxy overridden list.
+deployment.cache.max.size @ int @ "-1" @ Maximum size of deployment cache in MB. This is the cache size for each cache: Java Web Start and Java Plug-in. "0"-Disables caching in Java Plug-in; cache size in Java Web Start will be unlimited. "-1"-For unlimited cache size.
+deployment.cache.jarcompression @ String @ 0 @ 0-9 compression ratio to be used in applet jar compression.
+deployment.javapi.cache.enabled @ Boolean @ false @ Specifies if cache should be disabled. false means it should not be disabled.
+deployment.console.startup.mode @ String @ "HIDE" @ The choices are: "HIDE" to hide the Java Console; "SHOW" to show the Java Console; "DISABLE" to disable the Java Console;
+deployment.trace @ Boolean @ false @ Enable tracing.
+deployment.log @ Boolean @ false @ Enable logging.
+deployment.javaws.associations @ int @ 2 @ The JNLP associations. The choices are: ASSOCIATION_NEVER = 0; ASSOCIATION_NEW_ONLY = 1; ASSOCIATION_ASK_USER = 2; ASSOCIATION_REPLACE_ASK = 3;
+deployment.javaws.shortcut @ String @ "ASK_IF_HINTED" @ This relates to creating a desktop shortcut for Java Web Start. The choices are: "NEVER", "ALWAYS", "ASK_USER", "ASK_IF_HINTED", "ALWAYS_IF_HINTED"
+deployment.browser.path @ String @ "<No Browser Selected>" @ This is the path to the browser for showing web pages from the application viewer, the About Box, and Web Start applications. Note that this property is used for Solaris and Linux only. On Widows, this property is ignored, and the default browser is determined the same way it is by any other application that launches a browser on Windows.
+deployment.javaws.update.timeout @ int @ 500 @ Units are milliseconds.
+
+
+
