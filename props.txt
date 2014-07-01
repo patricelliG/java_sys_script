@@ -62,6 +62,3 @@ deployment.javaws.associations @ int @ 2 @ The JNLP associations. The choices ar
 deployment.javaws.shortcut @ String @ "ASK_IF_HINTED" @ This relates to creating a desktop shortcut for Java Web Start. The choices are: "NEVER", "ALWAYS", "ASK_USER", "ASK_IF_HINTED", "ALWAYS_IF_HINTED"
 deployment.browser.path @ String @ "<No Browser Selected>" @ This is the path to the browser for showing web pages from the application viewer, the About Box, and Web Start applications. Note that this property is used for Solaris and Linux only. On Widows, this property is ignored, and the default browser is determined the same way it is by any other application that launches a browser on Windows.
 deployment.javaws.update.timeout @ int @ 500 @ Units are milliseconds.
-
-
-
