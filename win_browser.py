@@ -7,9 +7,11 @@ path_ie = "AppData\\Local\\Microsoft\\Internet Explorer"
 config_ie = "brndlog.txt"
 filename = usr+"\\"+path_ie+"\\"+config_ie
 if os.path.exists(filename):
-    file_ie = open(filename).read()
+    file_ie = open(filename)
+    text_ie = file_ie.read()
+    file_ie.close()
     regex = re.compile("Inf Version is set to \"([\d|,]+)\"")
-    version = regex.findall(file_ie)
+    version = regex.findall(text_ie)
     print("IE " + ''.join(version).replace(",", "."))
 else:
     print("IE not found in generic location.")
@@ -26,14 +28,17 @@ if os.path.exists(filename):
     file_lay_2 = open(filename)
     regex = re.compile("Path=(.+)")
     lay_2 = regex.findall(file_lay_2.read())
+    file_lay_2.close()
     path_ff_lay_2 = ''.join(lay_2).replace("/","\\")
     #now do same as ie
     config_ff="compatibility.ini"
     filename = usr+"\\"+path_ff_lay_1+"\\"+path_ff_lay_2+"\\"+config_ff
     if os.path.exists(filename):
-        file_ff = open(filename).read()
+        file_ff = open(filename)
+        text_ff = file_ff.read()
+        file_ff.close()
         regex = re.compile("LastVersion=(.+)")
-        version = regex.findall(file_ff)
+        version = regex.findall(text_ff)
         print("Firefox " + ''.join(version))
     else:
         print("Firefox not found in generic location.")
@@ -45,9 +50,11 @@ path_chrome = "AppData\\Local\\Google\\Chrome\\User Data"
 config_chrome = "Local State"
 filename = usr+"\\"+path_chrome+"\\"+config_chrome
 if os.path.exists(filename):
-    file_chrome = open(filename).read()
+    file_chrome = open(filename)
+    text_chrome = file_chrome.read()
+    file_chrome.close()
     regex = re.compile("\"stats_version\": \"([\d|.]+)\"")
-    version = regex.findall(file_chrome)
+    version = regex.findall(text_chrome)
     print("Chrome "+ ''.join(version))
 else:
     print("Chrome not found in generic location.")
