@@ -1,5 +1,8 @@
-import os 
+import os
+import re
 from deploy_prop import deploy_prop
+from lib import extract_from_file
+
 
 # Get User level Java Settings
 
@@ -16,4 +19,15 @@ if(os.path.exists(filename)):
 else:
     print("ERROR: User level deployment.properties file not found.")
 
+'''Admin Lvl'''
+'''config_deployment_conf = "deployment.config"
+filename = usr+"\\"+path_deployment_prop+"\\"+config_deployment_conf
+print(filename)
+regex = re.compile("deployment.system.config=file\\\\:(.+)")
+path_unformatted = extract_from_file(filename, regex)
+path_formatted = ''.join(path_unformatted).replace('/','\\').replace('C\\','C')
+print(path_formatted)
+if os.path.exists(path_formatted):
+    print("yes")
+'''
 

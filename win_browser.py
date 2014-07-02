@@ -1,14 +1,8 @@
 import os
 import re
-usr = os.path.expanduser("~")
-path_ie = "AppData\\Local\\Microsoft\\Internet Explorer"
-config_ie = "brndlog.txt"
+from lib.py import extract_from_file
 
-def extract_from_file(filename, regex):
-    file_as_string = open(filename).read()
-    re.compile(regex)
-    version = regex.findall(file_as_string)
-    return version
+usr = os.path.expanduser("~")
 
 def get_version(browser, filename, version_regex):
     if os.path.exists(filename):
