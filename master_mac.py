@@ -8,6 +8,8 @@ import mac_default_browser
 import mac_java_blacklist
 import mac_java_exception_sites
 import java_version
+import mac_scan_java
+
 
 border = ('=' * 20 + '\n')
 
@@ -20,8 +22,11 @@ mac_os_version.mac_os_version(output)
 
 #### Scan for Browser Info ###
 output.write(border + "INTERNET BROWSER\n" + border)
+output.write("DEFAULT BROWSERS:\n\n")
+             
 # Get default browser
 mac_default_browser.mac_default_browser(output)
+output.write("BROWSER VERSION:\n\n")
 # Get additional browser information
 mac_browser.mac_browser_version(output)
 
@@ -31,6 +36,7 @@ java_version.run_java_version(output)
 
 ### Scan deployment.properties file ###
 output.write(border + "JAVA SETTINGS\n" + border)
+mac_scan_java.mac_scan_java(output)
 
 ### Scan Whitelist ### 
 output.write(border + "JAVA WHITELIST\n" + border)

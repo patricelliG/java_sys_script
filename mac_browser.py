@@ -17,9 +17,9 @@ def mac_browser_version(output):
     if os.path.exists(filename):
         regex = re.compile("<key>CFBundleShortVersionString</key>\n[\s+]<string>([\d|.]+)")
         version = lib.extract_from_file(filename, regex)
-        output.write("Safari "+ ''.join(version))
+        output.write("Safari "+ ''.join(version) + "\n")
     else:
-        output.write("Safari not found in generic location.")
+        output.write("Safari not found in generic location." + "\n")
 
 
     '''Pull Data for Firefox Version'''
@@ -39,9 +39,9 @@ def mac_browser_version(output):
     if os.path.exists(filename):
         regex = re.compile("LastVersion=(.+)")
         version = lib.extract_from_file(filename, regex)
-        output.write("Firefox " + ''.join(version))
+        output.write("Firefox " + ''.join(version) + "\n")
     else:
-        output.write("Firefox not found in generic location.")
+        output.write("Firefox not found in generic location." + "\n")
     
 
     '''Pull Data for Chrome Version'''
@@ -51,7 +51,7 @@ def mac_browser_version(output):
     if os.path.exists(filename):
         regex = re.compile("\"stats_version\": \"([\d|.]+)\"")
         version = lib.extract_from_file(filename, regex)
-        output.write("Chrome "+ ''.join(version))
+        output.write("Chrome "+ ''.join(version) + "\n")
     else:
-        output.write("Chrome not found in generic location.")
+        output.write("Chrome not found in generic location.") + "\n"
 
