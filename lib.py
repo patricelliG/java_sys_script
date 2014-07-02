@@ -3,8 +3,12 @@ import os
 import subprocess
 
 def run_java_version (output):
-    output.write(subprocess.check_output(["java", "-version"], stderr=subprocess.STDOUT))
-
+    version = subprocess.check_output(["java", "-version"], stderr=subprocess.STDOUT)
+    if version.startswith('java version'):
+        output.write(version)
+    else:
+        output.write('JAVA NOT INSTALLED')
+    
 def extract_from_file(file_path, regex):
     if os.path.exists(file_path):
         f = open(file_path)

@@ -31,7 +31,7 @@ mac_browser.mac_browser_version(output)
 
 ### Scan Java Version ###
 output.write(border + "JAVA VERSION\n" + border)
-java_version.run_java_version(output)
+lib.run_java_version(output)
 
 ### Scan deployment.properties file ###
 output.write(border + "JAVA SETTINGS\n" + border)
