@@ -20,5 +20,5 @@ def run_win_deploy_prop (output):
 	config_deployment_conf = "deployment.config"
 	filename = usr+"\\"+path_deployment_prop+"\\"+config_deployment_conf
 	if os.path.exists(filename):
-		output.write("Advanced Administrator settings indicated. For settings location see "+filename+"\n")
+		output.write("WARDNING: Advanced Administrator settings indicated. For settings location see "+filename+"\n")
 
