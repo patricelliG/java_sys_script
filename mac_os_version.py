@@ -1,7 +1,8 @@
 import subprocess
-import re
 
-'''Mac OS Version'''
+def mac_os_version(output):
 
-print subprocess.check_output('sw_vers')
+    '''Mac OS Version'''
+
+    output.write(subprocess.check_output('sw_vers'))
 
