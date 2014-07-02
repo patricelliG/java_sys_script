@@ -1,5 +1,9 @@
 import re
 import os
+import subprocess
+
+def run_java_version (output):
+    output.write(subprocess.check_output(["java", "-version"], stderr=subprocess.STDOUT))
 
 def extract_from_file(file_path, regex):
     if os.path.exists(file_path):

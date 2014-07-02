@@ -7,7 +7,7 @@ import mac_browser
 import mac_default_browser
 import mac_java_blacklist
 import mac_java_exception_sites
-import java_version
+import lib 
 
 border = ('=' * 20 + '\n')
 

@@ -1,6 +1,6 @@
 import os
 import re
-from lib.py import extract_from_file
+from lib import extract_from_file
 
 usr = os.path.expanduser("~")
 
@@ -9,7 +9,7 @@ def get_version(browser, filename, version_regex):
         version = extract_from_file(filename, version_regex)
         return browser + " " + ''.join(version)
     else:
-        return browser+" not found in generic location."
+        return "ERROR: " + browser + " not found in generic location."
 
 def scan_ie():
     path_ie = "AppData\\Local\\Microsoft\\Internet Explorer"
@@ -43,11 +43,10 @@ def scan_chrome():
     version_regex = re.compile("\"stats_version\": \"([\d|.]+)\"")
     return get_version("Chrome", filename, version_regex)
 
-def run_scan_browsers(file):
+def run_win_browser(file):
     output=""
     output += scan_ie() + "\n"
     output += scan_firefox() + "\n"
     output += scan_chrome() + "\n"
-    print(output)
+    file.write(output)
 
-run_scan_browsers(0)

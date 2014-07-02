@@ -3,7 +3,9 @@
 # Also calls each subscan
 
 from windows_os_version import run_windows_os_version
-from java_version import run_java_version
+from lib import run_java_version
+from win_browser import run_win_browser
+from win_deploy_prop import run_win_deploy_prop
 
 border = ('=' * 20 + '\n')
 
@@ -18,6 +20,7 @@ run_windows_os_version(output)
 output.write(border + "INTERNET BROWSER\n" + border)
 # Get default browser
 # Get additional browser information
+run_win_browser(output)
 
 ### Scan Java Version ###
 output.write(border + "JAVA VERSION\n" + border)
@@ -25,6 +28,7 @@ run_java_version(output)
 
 ### Scan deployment.properties file ###
 output.write(border + "JAVA SETTINGS\n" + border)
+run_win_deploy_prop(output)
 
 ### Scan Witelist ### 
 output.write(border + "JAVA WHITELIST\n" + border)
