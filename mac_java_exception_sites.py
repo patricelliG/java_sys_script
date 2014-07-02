@@ -2,7 +2,7 @@ import os
 import re
 
 '''
-Reads Java Blacklist and Whitelist site files and prints site exceptions
+Reads Java Exception Sites and print those sites
 '''
 
 
