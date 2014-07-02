@@ -2,7 +2,7 @@
 
 import os.path
 
-def mac_browser(output):
+def mac_default_browser(output):
     '''
     Pulls the file and prints the default browser for various file types
     '''

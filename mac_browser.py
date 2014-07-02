@@ -2,7 +2,7 @@ import lib
 import os
 import re
 
-def browser_version(output):
+def mac_browser_version(output):
 '''
 Reads the machine's current browsers' versions and writes them to the output
 file given as a parameter
