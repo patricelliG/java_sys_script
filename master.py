@@ -3,6 +3,7 @@
 # Also calls each subscan
 
 from windows_os_version import run_windows_os_version
+from java_version import run_java_version
 
 border = ('=' * 20 + '\n')
 
@@ -18,8 +19,9 @@ output.write(border + "INTERNET BROWSER\n" + border)
 # Get default browser
 # Get additional browser information
 
-### Scan Jave Version ###
+### Scan Java Version ###
 output.write(border + "JAVA VERSION\n" + border)
+run_java_version(output)
 
 ### Scan deployment.properties file ###
 output.write(border + "JAVA SETTINGS\n" + border)
