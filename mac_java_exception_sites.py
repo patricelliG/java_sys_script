@@ -2,7 +2,7 @@ import os
 import re
 
 
-def exception_sites(output)
+def exception_sites(output):
     '''
     Reads Java Exception Sites and writes those sites to the output file given
     as a parameter

@@ -1,4 +1,5 @@
 import re
+import os
 
 def extract_from_file(file_path, regex):
     if os.path.exists(file_path):

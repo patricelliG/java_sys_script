@@ -3,10 +3,10 @@ import os
 import re
 
 def mac_browser_version(output):
-'''
-Reads the machine's current browsers' versions and writes them to the output
-file given as a parameter
-'''
+    '''
+    Reads the machine's current browsers' versions and writes them to the output
+    file given as a parameter
+    '''
 
     usr = os.path.expanduser("~")
 
@@ -32,17 +32,17 @@ file given as a parameter
         regex = re.compile("Path=(.+)")
         lay_2 = lib.extract_from_file(filename, regex)
         path_ff_lay_2 = ''.join(lay_2)
-        #now do same as ie
-        config_ff="compatibility.ini" 
-        filename = usr+"/"+path_ff_lay_1+"/"+path_ff_lay_2+"/"+config_ff
-        if os.path.exists(filename):
-            regex = re.compile("LastVersion=(.+)")
-            version = lib.extract_from_file(filename, regex)
-            output.write("Firefox " + ''.join(version))
-        else:
-            output.write("Firefox not found in generic location.")
+
+    #now do same as ie
+    config_ff="compatibility.ini" 
+    filename = usr+"/"+path_ff_lay_1+"/"+path_ff_lay_2+"/"+config_ff
+    if os.path.exists(filename):
+        regex = re.compile("LastVersion=(.+)")
+        version = lib.extract_from_file(filename, regex)
+        output.write("Firefox " + ''.join(version))
     else:
         output.write("Firefox not found in generic location.")
+    
 
     '''Pull Data for Chrome Version'''
     path_chrome = "Library/Application Support/Google/Chrome"

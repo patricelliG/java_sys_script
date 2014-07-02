@@ -7,6 +7,7 @@ import mac_browser
 import mac_default_browser
 import mac_java_blacklist
 import mac_java_exception_sites
+import java_version
 
 border = ('=' * 20 + '\n')
 
@@ -26,6 +27,7 @@ mac_browser.mac_browser_version(output)
 
 ### Scan Java Version ###
 output.write(border + "JAVA VERSION\n" + border)
+java_version.run_java_version(output)
 
 ### Scan deployment.properties file ###
 output.write(border + "JAVA SETTINGS\n" + border)

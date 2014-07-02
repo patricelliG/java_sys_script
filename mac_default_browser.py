@@ -25,7 +25,6 @@ def mac_default_browser(output):
         this_preference = preferences[type_idx:]
         start = this_preference.find('com') + 4
         end = this_preference.find ('\xd2')
-
         output.write("Thttp: " + this_preference[start:end])
 
     #Uhttps
@@ -36,7 +35,6 @@ def mac_default_browser(output):
         this_preference = preferences[type_idx:]
         start = this_preference.find('com') + 4
         end = this_preference.find ('\xd2')
-
         output.write("Uhttps: " + this_preference[start:end])
 
     #public.html
@@ -47,8 +45,7 @@ def mac_default_browser(output):
         this_preference = preferences[type_idx:]
         start = this_preference.find('com') + 4
         end = this_preference.find ('\xd2')
-
-       output.write("Public html: " + this_preference[start:end])
+        output.write("Public html: " + this_preference[start:end])
 
     #public.url
     type_idx = preferences.find('public.url')
