@@ -1,6 +1,8 @@
 import os
 import re
 usr = os.path.expanduser("~")
+path_ie = "AppData\\Local\\Microsoft\\Internet Explorer"
+config_ie = "brndlog.txt"
 
 def extract_from_file(filename, regex):
     file_as_string = open(filename).read()
