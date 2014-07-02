@@ -3,6 +3,6 @@
 
 import platform
 
-def run_windows_os_version (output):
+def run_win_os_version (output):
     output.write('ProductName:    ' + platform.system() + ' ' + platform.release() + '\n')
     output.write('ProductVersion: ' + platform.version() + '\n')

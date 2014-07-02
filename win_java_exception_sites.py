@@ -2,7 +2,7 @@ import os
 import re
 
 
-def exception_sites(output):
+def run_win_java_exception_sites(output):
     '''
 Reads Java Exception Sites and writes those sites to the output file given
 as a parameter
@@ -23,4 +23,4 @@ as a parameter
         else:
             output.write(exception_sites)
     else:
-        output.write("Java Exception Sites not found in generic location.")
+        output.write("ERROR: Java Exception Sites not found in generic location.\n")

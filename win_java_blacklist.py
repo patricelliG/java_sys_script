@@ -6,7 +6,7 @@ Reads Java Blacklist file and writes its contents to the output file taken
 as a parameter
 '''
 
-def blacklist(output):
+def run_win_java_blacklist(output):
 
     usr = os.path.expanduser("~")
 
@@ -23,4 +23,4 @@ def blacklist(output):
         else:
             output.write(blacklist)
     else:
-        output.write("Java Blacklisted Sites not found in generic location.")
+        output.write("ERROR: Java Blacklisted Sites not found in generic location.\n")
