@@ -8,11 +8,12 @@ from win_browser import run_win_browser
 from win_deploy_prop import run_win_deploy_prop
 from win_java_exception_sites import run_win_java_exception_sites
 from win_java_blacklist import run_win_java_blacklist
+from win_default_browser import run_win_default_browser
 
 border = ('=' * 20 + '\n')
 
 # Create the output file
-output = open('java_sys_scan.txt', 'w')
+output = open('SCAN_RESULTS.txt', 'w')
 
 #### Scan for OS details ###
 output.write(border + "OPERATING SYSTEM\n" + border)
@@ -21,6 +22,7 @@ run_win_os_version(output)
 #### Scan for Browser Info ###
 output.write(border + "INTERNET BROWSER\n" + border)
 # Get default browser
+run_win_default_browser(output)
 # Get additional browser information
 run_win_browser(output)
 
