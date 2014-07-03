@@ -11,9 +11,9 @@ def run_win_default_browser(output):
 				cmd = QueryValue(key, None)
             output.write("Default Browser: "+cmd)
 		except:
-			report_error(output)
+			report_error(output) #Likely cause: default browser was uninstalled but it still marked as the default
 	else:
-		report_error(output)
+		report_error(output) #Likely cause: not on windows
 
 def report_error(output):
 	output.write("ERROR: Could not get the current browser.\n")
