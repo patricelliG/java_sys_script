@@ -16,7 +16,7 @@ border = ('=' * 20 + '\n')
 output = open('SCAN_RESULTS.txt', 'w')
 
 #### Scan for OS details ###
-output.write('\n' + border + "OPERATING SYSTEM\n" + border)
+output.write(border + "OPERATING SYSTEM\n" + border)
 run_win_os_version(output)
 
 #### Scan for Browser Info ###

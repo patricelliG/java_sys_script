@@ -50,7 +50,7 @@ def run_win_browser(output):
     for f in fns:
         results=f()
         if results != '':
-            output.write(results)
+            output.write(results+'\n')
     #output=""
     #output += scan_ie() + "\n"
     #output += scan_firefox() + "\n"
