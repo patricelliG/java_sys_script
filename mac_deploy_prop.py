@@ -1,6 +1,5 @@
 import os
 import re
-from deploy_prop import deploy_prop
 from lib import extract_from_file
 
 def mac_scan_java(output):
