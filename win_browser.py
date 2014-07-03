@@ -8,7 +8,8 @@ def get_version(browser, filename, version_regex):
     if os.path.exists(filename):
         version = extract_from_file(filename, version_regex)
         return browser + " " + ''.join(version)
-    #else:
+    else:
+        return ""
         #return "ERROR: " + browser + " not found in generic location."
 
 def scan_ie():
@@ -33,8 +34,9 @@ def scan_firefox():
         filename = usr+"\\"+path_ff_lay_1+"\\"+path_ff_lay_2+"\\"+config_ff
         version_regex = re.compile("LastVersion=(.+)")
         return get_version("Firefox", filename, version_regex)
-    #else:
+    else:
         #return "ERROR: Could not read filesystem for Firefox settings."
+        return ""
 
 def scan_chrome():
     path_chrome = "AppData\\Local\\Google\\Chrome\\User Data"
