@@ -23,4 +23,4 @@ def run_win_java_blacklist(output):
         else:
             output.write(blacklist)
     else:
-        output.write("ERROR: Java Blacklisted Sites not found in generic location.\n")
+        output.write("No blacklisted sites found\n")

@@ -23,4 +23,4 @@ as a parameter
         else:
             output.write(exception_sites)
     else:
-        output.write("ERROR: Java Exception Sites not found in generic location.\n")
+        output.write("No whitelisted sites found.\n")
