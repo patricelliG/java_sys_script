@@ -16,30 +16,30 @@ border = ('=' * 20 + '\n')
 output = open('SCAN_RESULTS.txt', 'w')
 
 #### Scan for OS details ###
-output.write(border + "OPERATING SYSTEM\n" + border)
+output.write('\n' + border + "OPERATING SYSTEM\n" + border)
 run_win_os_version(output)
 
 #### Scan for Browser Info ###
-output.write(border + "INTERNET BROWSER\n" + border)
+output.write('\n' + border + "INTERNET BROWSER\n" + border)
 # Get default browser
 run_win_default_browser(output)
 # Get additional browser information
 run_win_browser(output)
 
 ### Scan Java Version ###
-output.write(border + "JAVA VERSION\n" + border)
+output.write('\n' + border + "JAVA VERSION\n" + border)
 run_java_version(output)
 
 ### Scan deployment.properties file ###
-output.write(border + "JAVA SETTINGS\n" + border)
+output.write('\n' + border + "JAVA SETTINGS\n" + border)
 run_win_deploy_prop(output)
 
 ### Scan Witelist ### 
-output.write(border + "JAVA WHITELIST\n" + border)
+output.write('\n' + border + "JAVA WHITELIST\n" + border)
 run_win_java_exception_sites(output)
 
 ### Blacklist information ### 
-output.write(border + "JAVA BLACKLIST\n" + border)
+output.write('\n' + border + "JAVA BLACKLIST\n" + border)
 run_win_java_blacklist(output)
 
 # Close java_sys_scan.txt 
