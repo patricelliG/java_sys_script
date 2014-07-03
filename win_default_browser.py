@@ -16,4 +16,4 @@ def run_win_default_browser(output):
 		report_error(output) #Likely cause: not on windows
 
 def report_error(output):
-	output.write("ERROR: Could not get the current browser.\n")
+	output.write("ERROR: Could not get the default browser.\n")

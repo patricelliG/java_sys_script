@@ -45,10 +45,15 @@ def scan_chrome():
     version_regex = re.compile("\"stats_version\": \"([\d|.]+)\"")
     return get_version("Chrome", filename, version_regex)
 
-def run_win_browser(file):
-    output=""
-    output += scan_ie() + "\n"
-    output += scan_firefox() + "\n"
-    output += scan_chrome() + "\n"
-    file.write(output)
+def run_win_browser(output):
+    fns=[scan_ie,scan_firefox,scan_chrome]
+    for f in fns:
+        results=f()
+        if results != '':
+            output.write(results)
+    #output=""
+    #output += scan_ie() + "\n"
+    #output += scan_firefox() + "\n"
+    #output += scan_chrome() + "\n"
+    #file.write(output)
 
