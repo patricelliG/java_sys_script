@@ -4,7 +4,7 @@ import re
 
 def exception_sites(output):
     '''
-    Reads Java Exception Sites and writes those sites to the output file given
+    Reads Java exception sites file and writes those sites to the output file given
     as a parameter
     '''
 

@@ -1,6 +1,8 @@
-# Master file for the java_sys_script
-# Handles initial setup for the script
-# Also calls each subscan
+'''
+Master file for the java_sys_script
+Handles initial setup for the script
+Also calls each subscan
+'''
 
 import mac_os_version
 import mac_browser
@@ -49,5 +51,5 @@ mac_java_blacklist.blacklist(output)
 # Close java_sys_scan.txt 
 output.close()
 
-print 'Your report is on your DESKTOP in file: java_sys_scan.txt'
+print 'Your report is on your DESKTOP in file: SCAN_RESULTS.txt'
 
