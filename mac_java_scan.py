@@ -8,12 +8,14 @@ import mac_default_browser
 import mac_java_blacklist
 import mac_java_exception_sites
 import mac_deploy_prop
-import lib 
+import lib
+import os
 
 border = ('=' * 20 + '\n')
 
 # Create the output file
-output = open('java_sys_scan.txt', 'w')
+usr = os.path.expanduser('~')
+output = open(usr + '/' 'Desktop' + '/' + 'SCAN_RESULTS.txt', 'w')
 
 #### Scan for OS details ###
 output.write('\n' + border + "OPERATING SYSTEM\n" + border)
@@ -34,7 +36,7 @@ lib.run_java_version(output)
 
 ### Scan deployment.properties file ###
 output.write('\n' + border + "JAVA SETTINGS\n" + border)
-mac_scan_java.mac_scan_java(output)
+mac_deploy_prop.mac_scan_java(output)
 
 ### Scan Whitelist ### 
 output.write('\n' + border + "JAVA WHITELIST\n" + border)
@@ -46,4 +48,6 @@ mac_java_blacklist.blacklist(output)
 
 # Close java_sys_scan.txt 
 output.close()
+
+print 'Your report is on your DESKTOP in file: java_sys_scan.txt'
 

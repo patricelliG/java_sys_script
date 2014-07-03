@@ -53,5 +53,5 @@ def mac_browser_version(output):
         version = lib.extract_from_file(filename, regex)
         output.write("Chrome "+ ''.join(version) + "\n")
     else:
-        output.write("Chrome not found in generic location.") + "\n"
+        output.write("Chrome not found in generic location." + "\n")
 
