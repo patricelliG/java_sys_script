@@ -49,14 +49,14 @@ Read the documentation for installation instructions. Note, this is not a trivia
 http://www.pyinstaller.org/
 http://pythonhosted.org/PyInstaller/#installing-pyinstaller
 
-Please also note that in order to compile for a certian archetecture you must configure pyinstaller on that machine.
+Please also note that in order to compile for a certain architecture you must configure pyinstaller on that machine.
 You can not compile a windows executable on a mac and vice versa.
 
 ##### Compiling the program
 
 1. Download and extract the repository
 2. Open a terminal and navigate to java_sys_script directory
-3. Move into the folder for your repective arcehtecture (windows or mac)
+3. Move into the folder for your respective architecture (windows or mac)
 4. Compile the program with pyinstaller with the following command
   * On windows "pyinstaller -F win_java_scan.py"
   * On mac "pyinstaller -F mac_java_scan.py"
