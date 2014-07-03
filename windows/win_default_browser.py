@@ -1,10 +1,10 @@
 try :
 	from _winreg import HKEY_CURRENT_USER, OpenKey, QueryValue
-	throwError=False
+	throw_error=False
 except:
-	throwError=True
+	throw_error=True
 def run_win_default_browser(output):
-	if not throwError:
+	if not throw_error:
 		try:
 			path = r"Software\Classes\http\shell\open\command"
 			with OpenKey(HKEY_CURRENT_USER, path) as key:
@@ -16,4 +16,4 @@ def run_win_default_browser(output):
 		report_error(output) #Likely cause: not on windows
 
 def report_error(output):
-	output.write("ERROR: Could not get the default browser.\n")
+	output.write("Could not determine the default browser.\n")
