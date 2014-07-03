@@ -12,6 +12,28 @@ A python script that pulls information concerning java system configuration sett
 * Java whitelisted sited
 * Java blacklisted sites
 
+# Supported Archetectures 
+
+* Windows 7 / Windows 8
+* Mac OSX
+
+# Running the program
+
+#### Running the script
+
+1. Run the script via python 2
+2. The script will create a text file called SCAN_RESULTS.txt
+    * Windows: This file will be created in the current directory
+    * Mac: The file will be created on desktop
+
+#### Running the compiled executable
+
+1. Compile the program (see "Compiling to an Executable")
+2. Double click the executable file
+2. The program will create a text file called SCAN_RESULTS.txt
+    * Windows: This file will be created in the current directory
+    * Mac: The file will be created on desktop
+
 # Compiling to an Executable
 
 ##### Requirements
@@ -40,30 +62,8 @@ You can not compile a windows executable on a mac and vice versa.
   * On mac "pyinstaller -F mac_java_scan.py"
 5. Retrieve the executable which will be located in the "dist" directory created by pyinstaller
 
-# Running the program
-
-#### Running the script
-
-1. Run the script via python 2
-2. The script will create a text file called SCAN_RESULTS.txt
-    * Windows: This file will be created in the current directory
-    * Mac: The file will be created on desktop
-
-#### Running the compiled executable
-
-1. Compile the program (see "Compiling to an Executable")
-2. Double click the executable file
-2. The program will create a text file called SCAN_RESULTS.txt
-    * Windows: This file will be created in the current directory
-    * Mac: The file will be created on desktop
-
-
-
-# Supported Archetectures 
-* Windows 7 / Windows 8
-* Mac OSX
-
 # Know Issues
+
 * Windows
   * No support for Opera or Safari detection
 * Mac
