@@ -13,7 +13,7 @@ def run_win_deploy_prop (output):
         file_deployment_prop = open(filename)
         for line in file_deployment_prop:
             output.write(line), #this is the weirdest syntax to removetrailing newlines
-		file_deployment_prop.close()
+        file_deployment_prop.close()
     else:
         output.write("WARNING: User level deployment.properties file not found. Attempted to read from "+filename+"\n")
  
