@@ -5,9 +5,15 @@ except:
 	throwError=True
 def run_win_default_browser(output):
 	if not throwError:
-		path = r"Software\Classes\http\shell\open\command"
-		with OpenKey(HKEY_CURRENT_USER, path) as key:
-			cmd = QueryValue(key, None)
-                output.write("Default Browser: "+cmd)
+		try:
+			path = r"Software\Classes\http\shell\open\command"
+			with OpenKey(HKEY_CURRENT_USER, path) as key:
+				cmd = QueryValue(key, None)
+            output.write("Default Browser: "+cmd)
+		except:
+			report_error(output) #Likely cause: default browser was uninstalled but it still marked as the default
 	else:
-		output.write("ERROR: Could not get the current browser.\n")
+		report_error(output) #Likely cause: not on windows
+
+def report_error(output):
+	output.write("ERROR: Could not get the current browser.\n")
