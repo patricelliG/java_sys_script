@@ -19,7 +19,7 @@ def blacklist(output):
         blacklist = file_blacklist.read()
         file_blacklist.close()
         if blacklist == '':
-            output.write("NONE")
+            output.write("None")
         else:
             output.write(blacklist)
     else:
