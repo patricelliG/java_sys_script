@@ -19,7 +19,7 @@ as a parameter
         exception_sites = file_exception_sites.read()
         file_exception_sites.close()
         if exception_sites == '':
-            output.write("NONE")
+            output.write("None")
         else:
             output.write(exception_sites)
     else:

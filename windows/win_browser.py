@@ -10,7 +10,6 @@ def get_version(browser, filename, version_regex):
         return browser + " " + ''.join(version)
     else:
         return ""
-        #return "ERROR: " + browser + " not found in generic location."
 
 def scan_ie():
     path_ie = "AppData\\Local\\Microsoft\\Internet Explorer"
@@ -20,8 +19,8 @@ def scan_ie():
     return get_version("IE", filename, version_regex)
 
 def scan_firefox():
-    #Firefox is dumb and creates a subfolder from a random string.
-    #Let's grab that string first'''
+    #Firefox is strange and creates a subfolder from a random string.
+    #Let's grab that string first
     path_ff_lay_1 = "AppData\\Roaming\\Mozilla\\Firefox"
     get_folder = "profiles.ini"
     filename = usr+"\\"+path_ff_lay_1+"\\"+get_folder
@@ -29,13 +28,12 @@ def scan_firefox():
         path_regex = re.compile("Path=(.+)")
         lay_2 = extract_from_file(filename, path_regex)
         path_ff_lay_2 = ''.join(lay_2).replace("/","\\")
-        #now do same as ie
+        #now do same as ie/chrome
         config_ff="compatibility.ini"
         filename = usr+"\\"+path_ff_lay_1+"\\"+path_ff_lay_2+"\\"+config_ff
         version_regex = re.compile("LastVersion=(.+)")
         return get_version("Firefox", filename, version_regex)
     else:
-        #return "ERROR: Could not read filesystem for Firefox settings."
         return ""
 
 def scan_chrome():
@@ -51,9 +49,3 @@ def run_win_browser(output):
         results=f()
         if results != '':
             output.write(results+'\n')
-    #output=""
-    #output += scan_ie() + "\n"
-    #output += scan_firefox() + "\n"
-    #output += scan_chrome() + "\n"
-    #file.write(output)
-

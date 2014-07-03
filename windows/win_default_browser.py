@@ -1,10 +1,10 @@
 try :
 	from _winreg import HKEY_CURRENT_USER, OpenKey, QueryValue
-	throwError=False
+	throw_error=False
 except:
-	throwError=True
+	throw_error=True
 def run_win_default_browser(output):
-	if not throwError:
+	if not throw_error:
 		try:
 			path = r"Software\Classes\http\shell\open\command"
 			with OpenKey(HKEY_CURRENT_USER, path) as key:
